@@ -26,28 +26,8 @@ namespace Game
         private void HandleMovement()
         {
             transform.position += transform.up * (_movementThrottle * currentShip.thrustSpeed * Time.deltaTime);
-            
-            if (transform.position.x > ScreenUtils.ScreenRight)
-            {
-                transform.position = new Vector3(ScreenUtils.ScreenLeft, transform.position.y, transform.position.z);
-            }
-
-            if (transform.position.x < ScreenUtils.ScreenLeft)
-            {
-                transform.position = new Vector3(ScreenUtils.ScreenRight, transform.position.y, transform.position.z);
-            }
-
-            if (transform.position.y > ScreenUtils.ScreenTop)
-            {
-                transform.position = new Vector3(transform.position.x, ScreenUtils.ScreenBottom, transform.position.z);
-            }
-
-            if (transform.position.y < ScreenUtils.ScreenBottom)
-            {
-                transform.position = new Vector3(transform.position.x, ScreenUtils.ScreenTop, transform.position.z);
-            }
         }
-
+        
         public void OnMovement(InputAction.CallbackContext value)
         {
             _movementInput = value.ReadValue<float>();

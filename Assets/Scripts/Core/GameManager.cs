@@ -12,12 +12,24 @@ namespace Core
         private ConfigDataReader _configDataReader;
         public Ship[] ships;
         [SerializeField] private GameObject playerObject;
+
+        [SerializeField] private GameObject PlayerProjectileObject;
         private void Awake()
         {
             _configDataReader = new ConfigDataReader();
             _configDataReader.LoadJson();
+            InitializePlayerBulletPool();
 
             SetCurrentPlayerShip(ships[0]);
+        }
+
+        private void Update()
+        {
+        }
+
+        private void InitializePlayerBulletPool()
+        {
+            PlayerProjectilePool.Initialize(PlayerProjectileObject);
         }
 
         private void SetCurrentPlayerShip(Ship ship)
