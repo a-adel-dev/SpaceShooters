@@ -7,7 +7,6 @@ namespace Game
 {
     public class Shooter : MonoBehaviour
     {
-        [SerializeField] private float bulletSpeed;
         [SerializeField] private float firingCoolDown;
         
         private float _timeSinceLastShot = float.MaxValue;
@@ -27,7 +26,7 @@ namespace Game
                 GameObject projectileObject = PlayerProjectilePool.Get();
                 projectileObject.transform.position = transform.position;
                 projectileObject.transform.localEulerAngles = transform.localEulerAngles;
-                projectileObject.GetComponent<Projectile>().Activate(bulletSpeed);
+                projectileObject.GetComponent<Projectile>().Activate();
                 _timeSinceLastShot = 0;
                 Debug.Log("Bang!");
                 

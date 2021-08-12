@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSprite: {fileID: 21300000, guid: a22cf40c77f86704cb5555ac7b648eda, type: 3}
   damageValue: 10
+  bulletLife: 0.5
+  bulletSpeed: 30

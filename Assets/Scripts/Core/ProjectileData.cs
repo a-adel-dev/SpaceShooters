@@ -9,5 +9,8 @@ namespace Core
         public Sprite projectileSprite;
         
         public int damageValue;
+        public float bulletLife;
+        public float bulletSpeed;
+
     }
 }

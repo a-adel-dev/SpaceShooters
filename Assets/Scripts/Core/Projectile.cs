@@ -6,7 +6,6 @@ namespace Core
     public class Projectile : MonoBehaviour
     {
         [SerializeField] private ProjectileData bulletData;
-        [SerializeField] private float bulletLife;
         private bool _activated;
         private float _bulletSpeed;
         private float _bulletLife;
@@ -15,7 +14,7 @@ namespace Core
         private void Update()
         {
             MoveBullet();
-            if (_bulletLife>=bulletLife)
+            if (_bulletLife>=bulletData.bulletLife)
             {
                 PlayerProjectilePool.Add(gameObject);
             }
@@ -27,11 +26,11 @@ namespace Core
             if (_activated) transform.position += transform.TransformDirection(Vector3.up) * (_bulletSpeed * Time.deltaTime);
         }
 
-        public void Activate(float bulletSpeed)
+        public void Activate()
         {
             //Debug.Log($"{gameObject.name} is activated! ");
             gameObject.SetActive(true);
-            _bulletSpeed = bulletSpeed;
+            _bulletSpeed = bulletData.bulletSpeed;
             _activated = true;
         }
 

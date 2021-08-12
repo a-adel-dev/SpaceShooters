@@ -53,6 +53,7 @@ namespace Core
             shipSprite.transform.parent = playerObject.transform;
             SpriteRenderer shipSpriteRenderer = shipSprite.AddComponent<SpriteRenderer>();
             shipSpriteRenderer.sprite = player.CurrentShip.ShipSprite;
+            shipSpriteRenderer.sortingOrder = 1;
             
             //adds ship exhaust sprite gameObject
             GameObject shipExhaustSprite = new GameObject {name = $"{player.CurrentShip.shipClass}Exhaust"};
