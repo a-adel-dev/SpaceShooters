@@ -15,6 +15,7 @@ namespace Core
 
         private void Start()
         {
+            SpawnObject();
             _spawnTimer.StartTimer(spawnCoolDown);
             _waveTimer.StartTimer(waveCoolDown);
         }
@@ -23,7 +24,8 @@ namespace Core
         {
             if (_spawning)
             {
-                Instantiate(spawnedObjectPrefab, transform.position, quaternion.identity);
+                GameObject asteroid =  Instantiate(spawnedObjectPrefab, transform.position, quaternion.identity);
+                asteroid.GetComponent<AsteroidMover>().Push(transform.up);
             }
         }
 
