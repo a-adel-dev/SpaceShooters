@@ -1,5 +1,7 @@
-﻿using Unity.Mathematics;
+﻿using Game;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Core
 {
@@ -26,6 +28,15 @@ namespace Core
             {
                 GameObject asteroid =  Instantiate(spawnedObjectPrefab, transform.position, quaternion.identity);
                 asteroid.GetComponent<AsteroidMover>().Push(transform.up);
+                int randomIndex = Random.Range(0, 3);
+                asteroid.GetComponent<Asteroid>().AsteridSize = (AsteroidSize) randomIndex;
+                asteroid.GetComponent<Asteroid>().SetAsteroidSize();
+                asteroid.GetComponent<AsteroidMover>().SetAsteroidSpeed();
+                
+                SpriteRenderer asteroidSpriteRenderer = asteroid.transform.GetChild(0).GetComponent<SpriteRenderer>();
+                asteroidSpriteRenderer.sortingOrder = 2;
+                
+
             }
         }
 

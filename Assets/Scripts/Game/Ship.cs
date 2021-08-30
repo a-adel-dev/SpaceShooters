@@ -19,8 +19,5 @@ namespace Game
         public bulletType bulletType;
     }
 
-    public enum bulletType
-    {
-        laser
-    }
+    
 }

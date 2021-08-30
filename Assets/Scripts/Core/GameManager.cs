@@ -22,11 +22,6 @@ namespace Core
 
             SetCurrentPlayerShip(ships[0]);
         }
-
-        private void Update()
-        {
-        }
-
         private void InitializePlayerBulletPool()
         {
             PlayerProjectilePool.Initialize(PlayerProjectileObject);
@@ -53,7 +48,7 @@ namespace Core
             shipSprite.transform.parent = playerObject.transform;
             SpriteRenderer shipSpriteRenderer = shipSprite.AddComponent<SpriteRenderer>();
             shipSpriteRenderer.sprite = player.CurrentShip.ShipSprite;
-            shipSpriteRenderer.sortingOrder = 1;
+            shipSpriteRenderer.sortingOrder = 3;
             
             //adds ship exhaust sprite gameObject
             GameObject shipExhaustSprite = new GameObject {name = $"{player.CurrentShip.shipClass}Exhaust"};

@@ -623,7 +623,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012572376}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f9c4d848eda4e4485d66ac6d2e8e83a, type: 3}
   m_Name: 
@@ -644,13 +644,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012572376}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9342876, w: 0.3565202}
   m_LocalPosition: {x: 9.88, y: 6.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 138.227}
 --- !u!114 &1012572379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,8 +664,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnedObjectPrefab: {fileID: 7291482260122209051, guid: 75bfb99d6884eda418cb88a041a840e9, type: 3}
-  spawnCoolDown: 2
-  waveCoolDown: 0
+  spawnCoolDown: 5
+  waveCoolDown: 10
 --- !u!1 &1020815313
 GameObject:
   m_ObjectHideFlags: 0

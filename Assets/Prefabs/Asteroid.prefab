@@ -155,3 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidBaseSpeed: 1
+  mediumAsteroidSpeedModifier: 2
+  smallAsteroidSpeedModifier: 3
+  screenBound: 0

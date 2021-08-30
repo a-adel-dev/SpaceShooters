@@ -1,4 +1,5 @@
 ﻿using System;
+using Game;
 using UnityEngine;
 using Utils;
 
@@ -7,6 +8,10 @@ namespace Core
     public class AsteroidMover : MonoBehaviour
     {
         [SerializeField] private float asteroidBaseSpeed;
+        [SerializeField] private float mediumAsteroidSpeedModifier;
+        [SerializeField] private float smallAsteroidSpeedModifier;
+        
+        private float _speed;
         private Vector3 _movementDirection;
         public bool screenBound;
         private Bounds screenBounds;
@@ -17,6 +22,22 @@ namespace Core
         {
             screenBounds = new Bounds(Camera.main.transform.position,
                 new Vector3(ScreenUtils.ScreenRight * 2, ScreenUtils.ScreenTop * 2, Mathf.Infinity));
+            
+        }
+
+        public void SetAsteroidSpeed()
+        {
+            _speed = asteroidBaseSpeed;
+            if (GetComponent<Asteroid>().AsteridSize == AsteroidSize.Medium)
+            {
+                _speed = asteroidBaseSpeed * mediumAsteroidSpeedModifier;
+                return;
+            }
+
+            if (GetComponent<Asteroid>().AsteridSize == AsteroidSize.Small)
+            {
+                _speed = asteroidBaseSpeed * smallAsteroidSpeedModifier;
+            }
         }
 
         private void Update()
@@ -28,7 +49,7 @@ namespace Core
 
         private void HandleMovement()
         {
-            transform.position += transform.TransformDirection (_movementDirection) * (asteroidBaseSpeed * Time.deltaTime);
+            transform.position += transform.TransformDirection (_movementDirection) * (_speed * Time.deltaTime);
             
             if (screenBound)
             {
