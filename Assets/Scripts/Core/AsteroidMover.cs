@@ -18,6 +18,8 @@ namespace Core
         Vector3 _direction;
         Vector3 lastPosition;
 
+        private bool _activated;
+
         private void Start()
         {
             screenBounds = new Bounds(Camera.main.transform.position,
@@ -49,6 +51,10 @@ namespace Core
 
         private void HandleMovement()
         {
+            if (_activated is false)
+            {
+                return;
+            }
             transform.position += transform.TransformDirection (_movementDirection) * (_speed * Time.deltaTime);
             
             if (screenBound)
@@ -94,6 +100,18 @@ namespace Core
             }
             if (screenBounds.Contains(transform.position))
                 screenBound = true;
+        }
+
+        public void Deactivate()
+        {
+            gameObject.SetActive(false);
+            _activated = false;
+        }
+
+        public void Activate()
+        {
+            gameObject.SetActive(true);
+            _activated = true;
         }
     }
 }

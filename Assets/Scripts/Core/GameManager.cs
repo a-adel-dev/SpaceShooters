@@ -2,6 +2,7 @@
 using Game;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using Utils;
 
 
@@ -13,18 +14,25 @@ namespace Core
         public Ship[] ships;
         [SerializeField] private GameObject playerObject;
 
-        [SerializeField] private GameObject PlayerProjectileObject;
+        [FormerlySerializedAs("PlayerProjectileObject")] [SerializeField] private GameObject playerProjectileObject;
+        [SerializeField] private GameObject asteroidPrefab;
         private void Awake()
         {
             _configDataReader = new ConfigDataReader();
             _configDataReader.LoadJson();
             InitializePlayerBulletPool();
+            InitializeAsteroidPool();
 
             SetCurrentPlayerShip(ships[0]);
         }
         private void InitializePlayerBulletPool()
         {
-            PlayerProjectilePool.Initialize(PlayerProjectileObject);
+            PlayerProjectilePool.Initialize(playerProjectileObject);
+        }
+
+        private void InitializeAsteroidPool()
+        {
+            AsteroidPool.Initialize((asteroidPrefab));
         }
 
         private void SetCurrentPlayerShip(Ship ship)

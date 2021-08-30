@@ -7,7 +7,6 @@ namespace Core
 {
     public class Spawner : MonoBehaviour
     {
-        [SerializeField] private GameObject spawnedObjectPrefab;
         [SerializeField] private float spawnCoolDown;
         [SerializeField] private float waveCoolDown;
         private readonly Timer _spawnTimer = new Timer();
@@ -26,17 +25,17 @@ namespace Core
         {
             if (_spawning)
             {
-                GameObject asteroid =  Instantiate(spawnedObjectPrefab, transform.position, quaternion.identity);
+                GameObject asteroid = AsteroidPool.Get();
+                asteroid.transform.position = transform.position;
                 asteroid.GetComponent<AsteroidMover>().Push(transform.up);
                 int randomIndex = Random.Range(0, 3);
                 asteroid.GetComponent<Asteroid>().AsteridSize = (AsteroidSize) randomIndex;
                 asteroid.GetComponent<Asteroid>().SetAsteroidSize();
                 asteroid.GetComponent<AsteroidMover>().SetAsteroidSpeed();
+                asteroid.GetComponent<AsteroidMover>().Activate();
                 
                 SpriteRenderer asteroidSpriteRenderer = asteroid.transform.GetChild(0).GetComponent<SpriteRenderer>();
                 asteroidSpriteRenderer.sortingOrder = 2;
-                
-
             }
         }
 
