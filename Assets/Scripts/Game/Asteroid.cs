@@ -9,7 +9,13 @@ namespace Game
     {
         private float _asteroidLife;
         public AsteroidSize AsteroidSize { get; set; }
+        private VFXPlayer _vfx;
 
+
+        private void Start()
+        {
+            _vfx = GetComponent<VFXPlayer>();
+        }
 
         private void Update()
         {
@@ -32,18 +38,25 @@ namespace Game
 
         public void Damage()
         {
+            if (GetComponent<AsteroidMover>().ScreenBound is false)
+            {
+                return;
+            }
             switch (AsteroidSize)
             {
                 case AsteroidSize.Big:
                     SpawnAsteroids( AsteroidSize.Medium, 2);
-                    Destroy(gameObject);
+                    _vfx.PLayFX();
+                    AsteroidPool.Add(gameObject);
                     break;
                 case AsteroidSize.Medium:
                     SpawnAsteroids( AsteroidSize.Small, 2);
-                    Destroy(gameObject);
+                    _vfx.PLayFX();
+                    AsteroidPool.Add(gameObject);
                     break;
                 default:
                     AsteroidPool.Add(gameObject);
+                    _vfx.PLayFX();
                     break;
             }
         }

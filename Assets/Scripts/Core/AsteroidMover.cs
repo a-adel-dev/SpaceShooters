@@ -13,12 +13,19 @@ namespace Core
         
         private float _speed;
         private Vector3 _movementDirection;
-        public bool screenBound;
+
+        public bool ScreenBound
+        {
+            get => _screenBound;
+            private set => _screenBound = value;
+        }
+
         private Bounds screenBounds;
         Vector3 _direction;
         Vector3 lastPosition;
 
         private bool _activated;
+        [SerializeField] bool _screenBound;
 
         private void Start()
         {
@@ -57,7 +64,7 @@ namespace Core
             }
             transform.position += transform.TransformDirection (_movementDirection) * (_speed * Time.deltaTime);
             
-            if (screenBound)
+            if (ScreenBound)
             {
                 if (transform.position.x > ScreenUtils.ScreenRight)
                 {
@@ -94,18 +101,21 @@ namespace Core
         
         private void InScreenBounds()
         {
-            if (screenBound)
+            if (ScreenBound)
             {
                 return;
             }
             if (screenBounds.Contains(transform.position))
-                screenBound = true;
+                ScreenBound = true;
         }
 
         public void Deactivate()
         {
             gameObject.SetActive(false);
+            ScreenBound = false;
+            _direction = Vector3.zero;
             _activated = false;
+            transform.localScale = Vector3.one;
         }
 
         public void Activate()

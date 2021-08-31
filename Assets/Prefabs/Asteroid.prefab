@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 8616584081886998797}
   - component: {fileID: 2999677296195194378}
   - component: {fileID: 4106109914605346319}
+  - component: {fileID: 4199424294902472970}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Enemy
@@ -197,3 +198,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &4199424294902472970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7291482260122209051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3630eb5f84b84444b2a96e6434bdc0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fxPrefab: {fileID: 1352115889153820395, guid: d13a4593ba9ce034396b54021b6c05db, type: 3}
+  vfxPlayTime: 10

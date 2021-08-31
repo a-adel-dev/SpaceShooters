@@ -1,4 +1,5 @@
 ﻿using System;
+using Game;
 using UnityEngine;
 
 namespace Core
@@ -23,7 +24,8 @@ namespace Core
 
         private void MoveBullet()
         {
-            if (_activated) transform.position += transform.TransformDirection(Vector3.up) * (_bulletSpeed * Time.deltaTime);
+            if (_activated) transform.position += 
+                transform.TransformDirection(Vector3.up) * (_bulletSpeed * Time.deltaTime);
         }
 
         public void Activate()
@@ -40,6 +42,15 @@ namespace Core
             gameObject.SetActive(false);
             _bulletLife = 0;
             _activated = false;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Enemy"))
+            {
+                other.GetComponent<IDamageble>().Damage();
+                PlayerProjectilePool.Add(gameObject);
+            }
         }
     }
 }

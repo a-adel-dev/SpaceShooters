@@ -28,8 +28,7 @@ namespace Game
                 projectileObject.transform.localEulerAngles = transform.localEulerAngles;
                 projectileObject.GetComponent<Projectile>().Activate();
                 _timeSinceLastShot = 0;
-                Debug.Log("Bang!");
-                
+
             }
         }
 

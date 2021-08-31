@@ -10,8 +10,8 @@ namespace Core
         public static void Add(GameObject asteroid)
         {
             asteroidPool.AddToPool(asteroid);
-            asteroid.SetActive(false);
             asteroid.GetComponent<AsteroidMover>().Deactivate();
+            
         }
         
         public static GameObject Get()
