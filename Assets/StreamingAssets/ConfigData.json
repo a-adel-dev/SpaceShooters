@@ -1,5 +1,6 @@
 ﻿{
   "beeRotationSpeed" : "2",
   "beeThrustSpeed" : "8",
-  "beeHealth" : "120"
+  "beeHealth" : "120",
+  "SfxVolume" : "0.5"
 }

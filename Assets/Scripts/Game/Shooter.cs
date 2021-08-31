@@ -29,7 +29,14 @@ namespace Game
                 projectileObject.GetComponent<Projectile>().Activate();
                 _timeSinceLastShot = 0;
 
+                PlayShootingFX(projectileObject);
+
             }
+        }
+
+        private void PlayShootingFX(GameObject projectileObject)
+        {
+            projectileObject.GetComponent<SfxAudioPlayer>().PlayAudio();
         }
 
         private bool Canfire()
