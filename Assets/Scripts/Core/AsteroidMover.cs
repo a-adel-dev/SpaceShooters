@@ -30,13 +30,13 @@ namespace Core
         public void SetAsteroidSpeed()
         {
             _speed = asteroidBaseSpeed;
-            if (GetComponent<Asteroid>().AsteridSize == AsteroidSize.Medium)
+            if (GetComponent<Asteroid>().AsteroidSize == AsteroidSize.Medium)
             {
                 _speed = asteroidBaseSpeed * mediumAsteroidSpeedModifier;
                 return;
             }
 
-            if (GetComponent<Asteroid>().AsteridSize == AsteroidSize.Small)
+            if (GetComponent<Asteroid>().AsteroidSize == AsteroidSize.Small)
             {
                 _speed = asteroidBaseSpeed * smallAsteroidSpeedModifier;
             }

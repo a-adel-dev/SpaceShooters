@@ -25,15 +25,25 @@ namespace Core
         {
             if (_spawning)
             {
+                int randomIndex = Random.Range(0, 3);
+                AsteroidSize size = (AsteroidSize)randomIndex;
+                SpawnAsteroids(size, 1);
+            }
+        }
+
+        public void SpawnAsteroids(AsteroidSize size, int numberOfAsteroids)
+        {
+            for (int i = 0; i < numberOfAsteroids; i++)
+            {
                 GameObject asteroid = AsteroidPool.Get();
                 asteroid.transform.position = transform.position;
                 asteroid.GetComponent<AsteroidMover>().Push(transform.up);
-                int randomIndex = Random.Range(0, 3);
-                asteroid.GetComponent<Asteroid>().AsteridSize = (AsteroidSize) randomIndex;
+
+                asteroid.GetComponent<Asteroid>().AsteroidSize = size;
                 asteroid.GetComponent<Asteroid>().SetAsteroidSize();
                 asteroid.GetComponent<AsteroidMover>().SetAsteroidSpeed();
                 asteroid.GetComponent<AsteroidMover>().Activate();
-                
+
                 SpriteRenderer asteroidSpriteRenderer = asteroid.transform.GetChild(0).GetComponent<SpriteRenderer>();
                 asteroidSpriteRenderer.sortingOrder = 2;
             }

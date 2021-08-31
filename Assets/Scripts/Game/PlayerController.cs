@@ -64,6 +64,5 @@ namespace Game
             _rotationInput = value.ReadValue<float>();
         }
 
-
     }
 }
