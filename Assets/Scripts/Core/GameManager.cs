@@ -1,5 +1,6 @@
 ﻿using System;
 using Game;
+using Game.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;

@@ -48,9 +48,11 @@ namespace Core
         {
             if (other.CompareTag("Enemy"))
             {
-                other.GetComponent<IDamageble>().Damage();
+                other.GetComponent<IDamageable>().Damage();
                 PlayerProjectilePool.Add(gameObject);
+                GameEvents.EnemyDestroyed(other.GetComponent<Enemy>().ScoreValue);
             }
         }
     }
+    
 }

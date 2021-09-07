@@ -1,6 +1,6 @@
 ﻿namespace Game
 {
-    public interface IDamageble
+    public interface IDamageable
     {
         void Damage();
     }

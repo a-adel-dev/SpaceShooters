@@ -380,6 +380,8 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
+  - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -387,6 +389,117 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &519420029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ee1c62c905bb24ea7c9cf3d9d40b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TraumaExponent: 0.00005
+  MaximumAngularShake: {x: 5, y: 5, z: 5}
+  MaximumTranslationShake: {x: 0.75, y: 0.75, z: 0.75}
+--- !u!82 &519420030
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -419,7 +532,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 0
@@ -951,6 +1064,7 @@ GameObject:
   - component: {fileID: 1020815314}
   - component: {fileID: 1020815316}
   - component: {fileID: 1020815315}
+  - component: {fileID: 1020815317}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1074,6 +1188,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020815313}
   m_CullTransparentMesh: 1
+--- !u!114 &1020815317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020815313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbfbda5e3f0f414ea132ce75f4c50dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1168732128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1388,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7809024482484292133, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
   m_PrefabInstance: {fileID: 7809024483371697431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1434242876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434242866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c90c8f132a4ee18a8e0ae17cd90f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fxList: {fileID: 11400000, guid: d63bd099a0bf46f43a0f72ba11f62943, type: 2}
 --- !u!1 &1569427491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1643,106 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: damageValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: hitShaker.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: deathShaker.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: cameraShaker.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: hitShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: deathShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: hitShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 519420029}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: cameraShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: deathShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 519420029}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: cameraShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 519420029}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: hitShaker.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: hitShaker.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InduceStress
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: deathShaker.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: cameraShaker.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: deathShaker.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InduceStress
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: cameraShaker.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InduceStress
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: hitShaker.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Core.StressReceiver, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: deathShaker.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Core.StressReceiver, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: cameraShaker.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Core.StressReceiver, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: hitShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: deathShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: cameraShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: hitShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: deathShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: cameraShaker.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7809024482484292132, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
       propertyPath: m_RootOrder
       value: 4

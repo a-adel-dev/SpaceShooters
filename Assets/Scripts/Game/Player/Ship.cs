@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using Core;
+﻿using Core;
+using UnityEngine;
 
-namespace Game
+namespace Game.Player
 {
     [CreateAssetMenu(fileName = "ShipType", menuName = "Ship", order = 0)]
     public class Ship : ScriptableObject
@@ -18,6 +18,4 @@ namespace Game
 
         public bulletType bulletType;
     }
-
-    
 }

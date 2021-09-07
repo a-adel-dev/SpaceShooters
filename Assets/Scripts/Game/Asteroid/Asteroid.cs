@@ -1,20 +1,21 @@
-﻿using System;
+﻿using Core;
 using UnityEngine;
-using Core;
 using Random = UnityEngine.Random;
 
-namespace Game
+namespace Game.Asteroid
 {
-    public class Asteroid : MonoBehaviour, IDamageble
+    public class Asteroid : MonoBehaviour, IDamageable
     {
         private float _asteroidLife;
         public AsteroidSize AsteroidSize { get; set; }
-        private VFXPlayer _vfx;
+        private AsteroidVFXPlayer _asteroidVFX;
+        private SfxAudioPlayer _sfxPlayer;
 
 
         private void Start()
         {
-            _vfx = GetComponent<VFXPlayer>();
+            _asteroidVFX = GetComponent<AsteroidVFXPlayer>();
+            _sfxPlayer = GetComponent<SfxAudioPlayer>();
         }
 
         private void Update()
@@ -45,18 +46,21 @@ namespace Game
             switch (AsteroidSize)
             {
                 case AsteroidSize.Big:
+                    _sfxPlayer.PlayAudio();
                     SpawnAsteroids( AsteroidSize.Medium, 2);
-                    _vfx.PLayFX();
+                    _asteroidVFX.PlayExplosionFX();
                     AsteroidPool.Add(gameObject);
                     break;
                 case AsteroidSize.Medium:
+                    _sfxPlayer.PlayAudio();
                     SpawnAsteroids( AsteroidSize.Small, 2);
-                    _vfx.PLayFX();
+                    _asteroidVFX.PlayExplosionFX();
                     AsteroidPool.Add(gameObject);
                     break;
-                default:
+                case AsteroidSize.Small:
+                    _sfxPlayer.PlayAudio();
+                    _asteroidVFX.PlayExplosionFX();
                     AsteroidPool.Add(gameObject);
-                    _vfx.PLayFX();
                     break;
             }
         }
@@ -88,7 +92,7 @@ namespace Game
             }
             if (other.CompareTag("Player"))
             {
-                other.GetComponent<IDamageble>().Damage();
+                other.GetComponent<IDamageable>().Damage();
                 Damage();
             }
 

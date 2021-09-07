@@ -1,10 +1,7 @@
-﻿using System;
-using Core;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
-using Utils;
 
-namespace Game
+namespace Game.Player
 {
     public class PlayerController : MonoBehaviour
     {

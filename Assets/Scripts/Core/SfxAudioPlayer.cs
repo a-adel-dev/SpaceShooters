@@ -11,12 +11,13 @@ namespace Core
 
         private void Awake()
         {
-            _audio = GetComponent<AudioSource>();
+            _audio = Camera.main.GetComponent<AudioSource>();
         }
 
         public void PlayAudio()
         {
-            _audio.PlayOneShot(fxList.clips[0], AudioSettings.SfxVolume);
+            int randomIndex = Random.Range(0, fxList.clips.Length);
+            _audio.PlayOneShot(fxList.clips[randomIndex], AudioSettings.SfxVolume);
         }
     }
 

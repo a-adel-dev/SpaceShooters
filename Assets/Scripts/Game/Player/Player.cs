@@ -1,7 +1,6 @@
-﻿using Core;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Game
+namespace Game.Player
 {
     public class Player : MonoBehaviour
     {
