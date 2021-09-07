@@ -9,6 +9,7 @@ namespace Core
         public int ScoreValue
         {
             get => _scoreValue;
+            set => _scoreValue = value;
         }
     }
 }

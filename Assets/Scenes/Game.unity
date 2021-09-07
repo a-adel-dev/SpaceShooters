@@ -167,14 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9c4d848eda4e4485d66ac6d2e8e83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints:
-  - {fileID: 1168732129}
-  - {fileID: 411362777}
-  - {fileID: 1865639566}
-  - {fileID: 1782965474}
-  - {fileID: 1569427492}
-  - {fileID: 819114933}
-  - {fileID: 1998664729}
+  wayPoints: []
   movementSpeed: 1
 --- !u!4 &310818705
 Transform:
@@ -202,7 +195,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waypoint (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -347,14 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9c4d848eda4e4485d66ac6d2e8e83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints:
-  - {fileID: 1168732129}
-  - {fileID: 411362777}
-  - {fileID: 1865639566}
-  - {fileID: 1782965474}
-  - {fileID: 1569427492}
-  - {fileID: 819114933}
-  - {fileID: 1998664729}
+  wayPoints: []
   movementSpeed: 1
 --- !u!4 &474320483
 Transform:
@@ -968,7 +954,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waypoint (5)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -986,6 +972,73 @@ Transform:
   m_Father: {fileID: 1430848034}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1008682468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1008682470}
+  - component: {fileID: 1008682469}
+  - component: {fileID: 1008682471}
+  m_Layer: 0
+  m_Name: AlienShipSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1008682469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008682468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9c4d848eda4e4485d66ac6d2e8e83a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wayPoints:
+  - {fileID: 1168732129}
+  - {fileID: 411362777}
+  - {fileID: 1865639566}
+  - {fileID: 1782965474}
+  - {fileID: 1569427492}
+  - {fileID: 819114933}
+  - {fileID: 1998664729}
+  movementSpeed: 4
+--- !u!4 &1008682470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008682468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.16, y: 7.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1008682471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008682468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08334e28a5c743b8840e5b4663c3be7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnCoolDown: 10
+  ShipPrefab: {fileID: 3842819964136936980, guid: 03be3df9ffd3e44498cce8178cce1d96, type: 3}
 --- !u!1 &1012572376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,14 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9c4d848eda4e4485d66ac6d2e8e83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints:
-  - {fileID: 1168732129}
-  - {fileID: 411362777}
-  - {fileID: 1865639566}
-  - {fileID: 1782965474}
-  - {fileID: 1569427492}
-  - {fileID: 819114933}
-  - {fileID: 1998664729}
+  wayPoints: []
   movementSpeed: 1
 --- !u!4 &1012572378
 Transform:
@@ -1212,7 +1258,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waypoint (0)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1356,7 +1402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1430848034}
   m_Layer: 0
-  m_Name: AsteroidSpawner Waypoints
+  m_Name: AlienShip WP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1413,7 +1459,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waypoint (4)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1475,14 +1521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9c4d848eda4e4485d66ac6d2e8e83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints:
-  - {fileID: 1168732129}
-  - {fileID: 411362777}
-  - {fileID: 1865639566}
-  - {fileID: 1782965474}
-  - {fileID: 1569427492}
-  - {fileID: 819114933}
-  - {fileID: 1998664729}
+  wayPoints: []
   movementSpeed: 1
 --- !u!4 &1627463100
 Transform:
@@ -1510,7 +1549,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waypoint (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1540,7 +1579,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waypoint (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1570,7 +1609,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waypoint (6)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1643,6 +1682,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2283040776223968800, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 2691331703171064684, guid: c517ecc5ca3c69541a8124905d537e41, type: 3}
     - target: {fileID: 1602105481227264073, guid: f4e9c94c8d5db9d45a319e30a5503cd3, type: 3}
       propertyPath: damageValue
       value: 5

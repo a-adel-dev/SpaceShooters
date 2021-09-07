@@ -25,14 +25,19 @@ namespace Game.Asteroid
 
         public void SetAsteroidSize()
         {
+            Enemy enemy = GetComponent<Enemy>();
+            enemy.ScoreValue = 12;
+            
             if (AsteroidSize == AsteroidSize.Medium)
             {
                 transform.localScale *= 0.5f;
+                enemy.ScoreValue = 20;
                 return;
             }
 
             if (GetComponent<Asteroid>().AsteroidSize == AsteroidSize.Small)
             {
+                enemy.ScoreValue = 33;
                 transform.localScale *= 0.25f;
             }
         }

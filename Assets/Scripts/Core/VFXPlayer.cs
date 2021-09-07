@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
-namespace Game.Player
+namespace Core
+
 {
-    public class PlayerVFX : MonoBehaviour
+    public class VFXPlayer : MonoBehaviour
     {
         [SerializeField] private float vfxPlayTime;
         [SerializeField] private GameObject explosionPrefab;

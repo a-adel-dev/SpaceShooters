@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace Core
 {
-    public class Spawner : MonoBehaviour
+    public class AsteroidSpawner : MonoBehaviour
     {
         [SerializeField] private float spawnCoolDown;
         [SerializeField] private float waveCoolDown;
@@ -56,7 +56,6 @@ namespace Core
             _waveTimer.Tick(Time.deltaTime);
             if (_spawnTimer.Finished)
             {
-                //TODO - create asteroid pool
                 SpawnObject();
                 _spawnTimer.ResetTimer(spawnCoolDown);
             }
