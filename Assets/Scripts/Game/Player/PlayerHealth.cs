@@ -11,7 +11,7 @@ namespace Game.Player
         [SerializeField] private int damageValue;
         [SerializeField] private UnityEvent hitShaker;
         [SerializeField] private UnityEvent deathShaker;
-        public UnityAction<int> updateHealthUI;
+        [SerializeField] private UnityEvent gameOver;
         private VFXPlayer _fxVFXPlayer;
         private SfxAudioPlayer _sfxPlayer;
 
@@ -26,14 +26,16 @@ namespace Game.Player
         public void Damage()
         {
             currentHealth -= damageValue;
+            GameEvents.PlayerHealthChanged((float)currentHealth / baseHealth);
             _fxVFXPlayer.PlayHitFX();
-            hitShaker.Invoke();
+            hitShaker?.Invoke();
             if (currentHealth <= 0)
             {
                 deathShaker.Invoke();
                 _sfxPlayer.PlayAudio();
                 _fxVFXPlayer.PlayExplosionFX();
                 currentHealth = 0;
+                gameOver?.Invoke();
                 Destroy(gameObject);
             }
         }

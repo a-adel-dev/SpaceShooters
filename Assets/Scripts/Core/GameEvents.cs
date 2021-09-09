@@ -12,7 +12,14 @@ namespace Core
         {
             onEnemyDestroyed?.Invoke(score);
         }
-        
-        
+
+
+
+        public static Action<float> onPlayerHealthChanged;
+
+        public static void PlayerHealthChanged(float healthRatio)
+        {
+            onPlayerHealthChanged?.Invoke(healthRatio);
+        }
     }
 }
