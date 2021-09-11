@@ -34,16 +34,16 @@ namespace Game.UI
         public void GetCurrentPlayerInfo()
         {
             transform.GetChild(1).gameObject.SetActive(true);
-            InputField input = GetInputField(transform.GetChild(1).gameObject);
-            input?.Select();
-            input?.ActivateInputField();
+            TMP_InputField input = GetInputField(transform.GetChild(1).gameObject);
+            input.Select();
+            input.ActivateInputField();
         }
         
-        private InputField GetInputField(GameObject playerNameInputDialogue)
+        private TMP_InputField GetInputField(GameObject playerNameInputDialogue)
         {
             foreach (Transform child in playerNameInputDialogue.transform)
             {
-                if (child.GetComponent<InputField>()) return child.GetComponent<InputField>();
+                if (child.GetComponent<TMP_InputField>()) return child.GetComponent<TMP_InputField>();
             }
             return null;
         }
