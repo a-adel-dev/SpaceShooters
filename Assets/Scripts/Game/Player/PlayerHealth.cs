@@ -1,4 +1,5 @@
 ﻿using Core;
+using Game.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -36,7 +37,7 @@ namespace Game.Player
                 _fxVFXPlayer.PlayExplosionFX();
                 currentHealth = 0;
                 gameOver?.Invoke();
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

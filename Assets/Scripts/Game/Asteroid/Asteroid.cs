@@ -54,18 +54,18 @@ namespace Game.Asteroid
                     _sfxPlayer.PlayAudio();
                     SpawnAsteroids( AsteroidSize.Medium, 2);
                     _asteroidVFX.PlayExplosionFX();
-                    AsteroidPool.Add(gameObject);
+                    gameObject.SetActive(false);
                     break;
                 case AsteroidSize.Medium:
                     _sfxPlayer.PlayAudio();
                     SpawnAsteroids( AsteroidSize.Small, 2);
                     _asteroidVFX.PlayExplosionFX();
-                    AsteroidPool.Add(gameObject);
+                    gameObject.SetActive(false);
                     break;
                 case AsteroidSize.Small:
                     _sfxPlayer.PlayAudio();
                     _asteroidVFX.PlayExplosionFX();
-                    AsteroidPool.Add(gameObject);
+                    gameObject.SetActive(false);
                     break;
             }
         }
@@ -74,8 +74,7 @@ namespace Game.Asteroid
         {
             for (int i = 0; i < numberOfAsteroids; i++)
             {
-                GameObject asteroid = AsteroidPool.Get();
-                asteroid.transform.position = transform.position;
+                GameObject asteroid =  ObjectPooler.Instance.SpawnFromPool(PoolTypes.Asteroids, transform.position, Quaternion.identity);
                 Vector3 direction = new Vector3(Random.Range(0, 1f), Random.Range(0, 1f), 0);
                 asteroid.GetComponent<AsteroidMover>().Push(direction);
 

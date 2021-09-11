@@ -1,7 +1,6 @@
 ﻿using System;
-using UnityEngine;
 
-namespace Core
+namespace Game.Data
 {
     public static class GameEvents
     {

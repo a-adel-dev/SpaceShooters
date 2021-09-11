@@ -1,10 +1,8 @@
-﻿using System;
-using Game;
-using Game.Asteroid;
+﻿using Core;
 using UnityEngine;
 using Utils;
 
-namespace Core
+namespace Game.Asteroid
 {
     public class AsteroidMover : MonoBehaviour
     {

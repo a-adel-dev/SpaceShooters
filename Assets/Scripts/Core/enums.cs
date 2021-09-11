@@ -11,4 +11,10 @@
     {
         laser
     }
+
+    public enum PoolTypes
+    {
+        Asteroids,
+        PlayerProjectile
+    }
 }

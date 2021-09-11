@@ -1,4 +1,5 @@
 ﻿using Game;
+using Game.Data;
 using UnityEngine;
 
 namespace Core
@@ -16,7 +17,7 @@ namespace Core
             MoveBullet();
             if (_bulletLife>=bulletData.bulletLife)
             {
-                PlayerProjectilePool.Add(gameObject);
+                gameObject.SetActive(false);
             }
             _bulletLife += Time.deltaTime;
         }
@@ -30,7 +31,6 @@ namespace Core
         public void Activate()
         {
             //Debug.Log($"{gameObject.name} is activated! ");
-            gameObject.SetActive(true);
             _bulletSpeed = bulletData.bulletSpeed;
             _activated = true;
         }
@@ -48,7 +48,7 @@ namespace Core
             if (other.CompareTag("Enemy"))
             {
                 other.GetComponent<IDamageable>().Damage();
-                PlayerProjectilePool.Add(gameObject);
+                gameObject.SetActive(false);
                 GameEvents.EnemyDestroyed(other.GetComponent<Enemy>().ScoreValue);
             }
         }

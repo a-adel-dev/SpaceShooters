@@ -1,45 +1,41 @@
-﻿using System;
-using Game;
+﻿using Core;
 using Game.Player;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
-using Utils;
 
-
-namespace Core
+namespace Game.Data
 {
     public class GameManager : MonoBehaviour
     {
-        private ConfigDataReader _configDataReader;
+        //private ConfigDataReader _configDataReader;
         public Ship[] ships;
         [SerializeField] private GameObject playerObject;
 
         [FormerlySerializedAs("PlayerProjectileObject")] [SerializeField] private GameObject playerProjectileObject;
         [SerializeField] private GameObject asteroidPrefab;
+        [SerializeField] private UnityEvent newGame;
         private void Awake()
         {
-            _configDataReader = new ConfigDataReader();
-            _configDataReader.LoadJson();
-            InitializePlayerBulletPool();
-            InitializeAsteroidPool();
+            newGame?.Invoke();
+            // GameObject[] objs = GameObject.FindGameObjectsWithTag("GameManager");
+            //  if (objs.Length > 1)
+            //  {
+            //      Destroy(gameObject);
+            //  }
+            //  DontDestroyOnLoad(this);
 
+             //_configDataReader = new ConfigDataReader();
+            //_configDataReader.LoadJson();
+
+            
             SetCurrentPlayerShip(ships[0]);
-        }
-        private void InitializePlayerBulletPool()
-        {
-            PlayerProjectilePool.Initialize(playerProjectileObject);
-        }
-
-        private void InitializeAsteroidPool()
-        {
-            AsteroidPool.Initialize((asteroidPrefab));
         }
 
         private void SetCurrentPlayerShip(Ship ship)
         {
             //clear old Components if there were any
-            var playerOld = playerObject.GetComponent<Player>();
+            var playerOld = playerObject.GetComponent<Player.Player>();
             if(playerOld) Destroy(playerOld);
 
             var spriteRenderersOld = playerObject.GetComponents<SpriteRenderer>();
@@ -49,7 +45,7 @@ namespace Core
             }
             
             //adds a player script and assign a ship class to it
-            Player player = playerObject.AddComponent<Player>();
+            Player.Player player = playerObject.AddComponent<Player.Player>();
             player.CurrentShip = ship;
             
             //adds ship sprite gameObject

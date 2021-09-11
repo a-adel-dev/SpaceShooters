@@ -5,20 +5,20 @@ namespace Utils
 {
     public static class ScreenUtils
     {
-        private static int screenWidth;
-        private static int screenHeight;
+        private static int _screenWidth;
+        private static int _screenHeight;
 
-        private static float screenLeft;
-        private static float screenRight;
-        private static float screenTop;
-        private static float screenBottom;
+        private static float _screenLeft;
+        private static float _screenRight;
+        private static float _screenTop;
+        private static float _screenBottom;
 
         public static float ScreenLeft
         {
             get
             {
                 CheckScreenSizeChanged();
-                return screenLeft;
+                return _screenLeft;
             }
         }
 
@@ -27,7 +27,7 @@ namespace Utils
             get
             {
                 CheckScreenSizeChanged();
-                return screenRight;
+                return _screenRight;
             }
         }
 
@@ -36,7 +36,7 @@ namespace Utils
             get
             {
                 CheckScreenSizeChanged();
-                return screenTop;
+                return _screenTop;
             }
         }
 
@@ -45,32 +45,32 @@ namespace Utils
             get
             {
                 CheckScreenSizeChanged();
-                return screenBottom;
+                return _screenBottom;
             }
         }
 
         private static void Initialize()
         {
-            screenWidth = Screen.width;
-            screenHeight = Screen.height;
+            _screenWidth = Screen.width;
+            _screenHeight = Screen.height;
 
             if (Camera.main is null) return;
             float screenZ = -Camera.main.transform.position.z;
             Vector3 lowerLeftCornerScreen = new Vector3(0, 0, screenZ);
-            Vector3 upperRightCornerScreen = new Vector3(screenWidth, screenHeight, screenZ);
+            Vector3 upperRightCornerScreen = new Vector3(_screenWidth, _screenHeight, screenZ);
 
             Vector3 lowerLeftCornerWorld = Camera.main.ScreenToWorldPoint(lowerLeftCornerScreen);
             Vector3 upperRightCornerWorld = Camera.main.ScreenToWorldPoint(upperRightCornerScreen);
 
-            screenLeft = lowerLeftCornerWorld.x;
-            screenRight = upperRightCornerWorld.x;
-            screenTop = upperRightCornerWorld.y;
-            screenBottom = lowerLeftCornerWorld.y;
+            _screenLeft = lowerLeftCornerWorld.x;
+            _screenRight = upperRightCornerWorld.x;
+            _screenTop = upperRightCornerWorld.y;
+            _screenBottom = lowerLeftCornerWorld.y;
         }
 
         private static void CheckScreenSizeChanged()
         {
-            if (screenWidth != Screen.width || screenHeight != Screen.height)
+            if (_screenWidth != Screen.width || _screenHeight != Screen.height)
             {
                 Initialize();
             }

@@ -1,9 +1,9 @@
-﻿using System;
-using Core;
+﻿using Core;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Game
+namespace Game.Player
 {
     public class Shooter : MonoBehaviour
     {
@@ -23,8 +23,8 @@ namespace Game
         {
             if (Canfire())
             {
-                GameObject projectileObject = PlayerProjectilePool.Get();
-                projectileObject.transform.position = transform.position;
+                GameObject projectileObject =
+                    ObjectPooler.Instance.SpawnFromPool(PoolTypes.PlayerProjectile, transform.position, quaternion.identity);
                 projectileObject.transform.localEulerAngles = transform.localEulerAngles;
                 projectileObject.GetComponent<Projectile>().Activate();
                 _timeSinceLastShot = 0;

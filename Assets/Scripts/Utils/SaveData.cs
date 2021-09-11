@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Utils
 {
@@ -10,6 +8,7 @@ namespace Utils
     public class SaveData
     {
         public List<ScorePair> highScoresList = new List<ScorePair>();
+        public int MaxHighScoreItems { get; set; } = 8;
         public string ToJson()
         {
             return JsonUtility.ToJson(this);
@@ -26,11 +25,21 @@ namespace Utils
             highScoresList.Add(pair);
             highScoresList.Sort();
             highScoresList.Reverse();
+            CleanHighScoreList();
+        }
+
+        private void CleanHighScoreList()
+        {
+            if (highScoresList.Count > MaxHighScoreItems)
+            {
+                highScoresList.RemoveAt(MaxHighScoreItems);
+            }
         }
 
         public bool IsHighScore(int score)
         {
-            return  highScoresList.Count < 8 || score > highScoresList[7].score;
+            Debug.Log(score);
+            return  highScoresList.Count < MaxHighScoreItems || score > highScoresList[MaxHighScoreItems-1].score;
         }
     }
     

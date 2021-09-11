@@ -38,6 +38,12 @@ namespace Core
                 return false;
             }
         }
+
+        public static bool IsSaveFileExist(string fileName)
+        {
+            var fullPath = Path.Combine(Application.persistentDataPath, fileName);
+            return File.Exists(fullPath);
+        }
     }
     
     

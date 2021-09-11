@@ -1,10 +1,9 @@
-﻿using Game;
-using Game.Asteroid;
+﻿using Core;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Core
+namespace Game.Asteroid
 {
     public class AsteroidSpawner : MonoBehaviour
     {
@@ -36,8 +35,8 @@ namespace Core
         {
             for (int i = 0; i < numberOfAsteroids; i++)
             {
-                GameObject asteroid = AsteroidPool.Get();
-                asteroid.transform.position = transform.position;
+                GameObject asteroid = ObjectPooler.Instance.SpawnFromPool(PoolTypes.Asteroids, transform.position,
+                        quaternion.identity);
                 asteroid.GetComponent<AsteroidMover>().Push(transform.up);
 
                 asteroid.GetComponent<Asteroid>().AsteroidSize = size;
