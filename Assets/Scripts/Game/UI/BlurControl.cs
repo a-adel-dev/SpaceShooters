@@ -22,8 +22,17 @@ namespace Game.UI
 
         }
 
+        public void RemoveBlur()
+        {
+            RuntimeUtilities.DestroyVolume(m_Volume, true, true);
+        }
+        
         private void OnDestroy()
         {
+            if (m_Volume is null)
+            {
+                return;
+            }
             RuntimeUtilities.DestroyVolume(m_Volume, true, true);
         }
     }

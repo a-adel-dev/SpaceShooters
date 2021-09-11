@@ -54,22 +54,30 @@ namespace Game.Asteroid
                     _sfxPlayer.PlayAudio();
                     SpawnAsteroids( AsteroidSize.Medium, 2);
                     _asteroidVFX.PlayExplosionFX();
+                    ResetAsteroid();
                     gameObject.SetActive(false);
                     break;
                 case AsteroidSize.Medium:
                     _sfxPlayer.PlayAudio();
                     SpawnAsteroids( AsteroidSize.Small, 2);
                     _asteroidVFX.PlayExplosionFX();
+                    ResetAsteroid();
                     gameObject.SetActive(false);
                     break;
                 case AsteroidSize.Small:
                     _sfxPlayer.PlayAudio();
                     _asteroidVFX.PlayExplosionFX();
+                    ResetAsteroid();
                     gameObject.SetActive(false);
                     break;
             }
         }
-        
+
+        private void ResetAsteroid()
+        {
+            gameObject.transform.localScale = Vector3.one;
+        }
+
         private void SpawnAsteroids(AsteroidSize size, int numberOfAsteroids)
         {
             for (int i = 0; i < numberOfAsteroids; i++)
