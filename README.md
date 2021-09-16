@@ -12,4 +12,5 @@ SpaceShooters is a game that lets you get into the cockpit of a spaceship in a h
 * Persistent high scores.
 
 visit https://www.youtube.com/watch?v=5c9IRWowTlU for a video demo.
+
 ![Image of Space Shooters ScreenShot](https://db5pap001files.storage.live.com/y4mMgDmxi_-nEJNTQnJTBy-BNQGHXnH8GfwO4SXb9udTxvSxyNw8moINLjTJ617Xy4boSTwkjCEdWF7mk6QSvtoyKHc_8fRFnL8NT3I1ciNN5LMY70RLZu72xn0XCc689Z9AD-29j0xx0X2G_B7kkqUX805kDgniqOhhWrHD6Y6BTZT38oizuY4w-asiygmaBJ1?width=1024&height=490&cropmode=none)
