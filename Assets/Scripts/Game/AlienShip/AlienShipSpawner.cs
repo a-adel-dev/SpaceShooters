@@ -10,6 +10,7 @@ namespace Game.AlienShip
         [SerializeField] private float spawnCoolDown;
         private readonly Timer _spawnTimer = new Timer();
         [SerializeField] private GameObject ShipPrefab;
+        private bool _gameOver;
 
         private void Start()
         {
@@ -23,12 +24,21 @@ namespace Game.AlienShip
 
         private void Update()
         {
+            if (_gameOver is true)
+            {
+                return;
+            }
             _spawnTimer.Tick(Time.deltaTime);
             if (_spawnTimer.Finished)
             {
                 SpawnShip();
                 _spawnTimer.ResetTimer(spawnCoolDown);
             }
+        }
+        
+        public void SetGameOver()
+        {
+            _gameOver = true;
         }
     }
 }

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7817244691352370286}
   - component: {fileID: 3374340606093037656}
   - component: {fileID: -2283040776223968800}
+  - component: {fileID: 1434242876}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -168,6 +169,63 @@ MonoBehaviour:
   baseHealth: 100
   currentHealth: 0
   damageValue: 5
+  hitShaker:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Core.StressReceiver, Assembly-CSharp
+        m_MethodName: InduceStress
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.05
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  deathShaker:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Core.StressReceiver, Assembly-CSharp
+        m_MethodName: InduceStress
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 10
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  gameOver:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Game.Data.HighScoreController, Assembly-CSharp
+        m_MethodName: StartGameOverEvents
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Game.UI.BlurControl, Assembly-CSharp
+        m_MethodName: BlurGameScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &7817244691352370286
 Rigidbody2D:
   serializedVersion: 4
@@ -218,5 +276,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vfxPlayTime: 10
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 2691331703171064684, guid: c517ecc5ca3c69541a8124905d537e41, type: 3}
   hitPrefab: {fileID: 7740818590557234195, guid: b98961fc0a8684c4a945e4a7646d86c6, type: 3}
+--- !u!114 &1434242876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7809024482484292133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c90c8f132a4ee18a8e0ae17cd90f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fxList:
+  - {fileID: 11400000, guid: 48001413baedc964695e92abaec52959, type: 2}

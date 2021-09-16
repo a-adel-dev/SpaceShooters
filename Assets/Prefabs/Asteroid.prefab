@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b749d116ad48c5bd263855b800e4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 5454456644898143069, guid: 4d29a6da8acf71845889a11549d98cf8, type: 3}
 --- !u!114 &8616584081886998797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c90c8f132a4ee18a8e0ae17cd90f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fxList: {fileID: 11400000, guid: 72fac281f1610f943a902acb3058c15e, type: 2}
+  fxList:
+  - {fileID: 11400000, guid: 72fac281f1610f943a902acb3058c15e, type: 2}
 --- !u!82 &3423607106193510220
 AudioSource:
   m_ObjectHideFlags: 0
@@ -336,4 +338,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ecd7d2bdda41d9b6ae9ba2ea8a603c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreValue: 14
+  scoreValue: 14

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ada918978444b19d3a9737bfa4dec0, type: 3}
   m_Name: BulletShoot
   m_EditorClassIdentifier: 
+  sfxType: 1
   clips:
   - {fileID: 8300000, guid: 6d448975f628aeb4b9816acc894c7e4e, type: 3}

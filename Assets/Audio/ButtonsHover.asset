@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8ada918978444b19d3a9737bfa4dec0, type: 3}
-  m_Name: GameMusic
+  m_Name: ButtonsHover
   m_EditorClassIdentifier: 
-  sfxType: 4
+  sfxType: 2
   clips:
-  - {fileID: 8300000, guid: 214b8ff8f0eded94a8fdfd57c38f0832, type: 3}
+  - {fileID: 8300000, guid: 67c65236888ead74bb8d441f7655db8b, type: 3}

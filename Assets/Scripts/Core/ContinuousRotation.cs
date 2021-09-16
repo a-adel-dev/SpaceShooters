@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Core
 {
-    public class ContinuosRotation : MonoBehaviour
+    public class ContinuousRotation : MonoBehaviour
     {
         [SerializeField] private float rotationSpeed;
         private void Update()

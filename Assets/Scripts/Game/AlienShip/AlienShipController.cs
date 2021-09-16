@@ -63,7 +63,7 @@ namespace Game.AlienShip
 
         public void Damage()
         {
-            _sfxPlayer.PlayAudio();
+            _sfxPlayer.PlayAudio(SFXType.Explosion);
             _fxPlayer.PlayExplosionFX();
             Destroy(gameObject);
         }

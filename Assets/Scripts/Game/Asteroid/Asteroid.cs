@@ -1,4 +1,6 @@
-﻿using Core;
+﻿
+using Core;
+
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -51,25 +53,50 @@ namespace Game.Asteroid
             switch (AsteroidSize)
             {
                 case AsteroidSize.Big:
-                    _sfxPlayer.PlayAudio();
-                    SpawnAsteroids( AsteroidSize.Medium, 2);
+                    _sfxPlayer.PlayAudio(SFXType.Explosion);
+                    DestroyAsteroid( AsteroidSize.Medium, 2);
                     _asteroidVFX.PlayExplosionFX();
                     ResetAsteroid();
                     gameObject.SetActive(false);
                     break;
                 case AsteroidSize.Medium:
-                    _sfxPlayer.PlayAudio();
-                    SpawnAsteroids( AsteroidSize.Small, 2);
+                    _sfxPlayer.PlayAudio(SFXType.Explosion);
+                    DestroyAsteroid( AsteroidSize.Small, 2);
                     _asteroidVFX.PlayExplosionFX();
                     ResetAsteroid();
                     gameObject.SetActive(false);
                     break;
                 case AsteroidSize.Small:
-                    _sfxPlayer.PlayAudio();
+                    _sfxPlayer.PlayAudio(SFXType.Explosion);
                     _asteroidVFX.PlayExplosionFX();
                     ResetAsteroid();
                     gameObject.SetActive(false);
                     break;
+            }
+        }
+
+        private void DestroyAsteroid(AsteroidSize size, int numAsteroids)
+        {
+            for (int i = 0; i < numAsteroids; i++)
+            {
+                GameObject asteroid = ObjectPooler.Instance.SpawnFromPool(PoolTypes.Asteroids, transform.position,
+                    Quaternion.identity);
+                float randomX = Random.Range(0, 1f);
+                float randomY = Random.Range(0, 1f);
+                asteroid.GetComponent<AsteroidMover>().Push(new Vector3(randomX,randomY,0));
+            
+                float randomRotation = Random.Range(0, 359f);
+                asteroid.transform.GetChild(0).transform.localEulerAngles = new Vector3(0, 0, randomRotation);
+
+                asteroid.GetComponent<Asteroid>().AsteroidSize = size;
+                asteroid.GetComponent<Asteroid>().SetAsteroidSize();
+                asteroid.GetComponent<AsteroidMover>().SetAsteroidSpeed();
+                asteroid.GetComponent<AsteroidMover>().Activate();
+
+
+                int randomIndex = Random.Range(0, 999);
+                SpriteRenderer asteroidSpriteRenderer = asteroid.transform.GetChild(0).GetComponent<SpriteRenderer>();
+                asteroidSpriteRenderer.sortingOrder = randomIndex;
             }
         }
 
@@ -78,24 +105,6 @@ namespace Game.Asteroid
             gameObject.transform.localScale = Vector3.one;
         }
 
-        private void SpawnAsteroids(AsteroidSize size, int numberOfAsteroids)
-        {
-            for (int i = 0; i < numberOfAsteroids; i++)
-            {
-                GameObject asteroid =  ObjectPooler.Instance.SpawnFromPool(PoolTypes.Asteroids, transform.position, Quaternion.identity);
-                Vector3 direction = new Vector3(Random.Range(0, 1f), Random.Range(0, 1f), 0);
-                asteroid.GetComponent<AsteroidMover>().Push(direction);
-
-                asteroid.GetComponent<Asteroid>().AsteroidSize = size;
-                asteroid.GetComponent<Asteroid>().SetAsteroidSize();
-                asteroid.GetComponent<AsteroidMover>().SetAsteroidSpeed();
-                asteroid.GetComponent<AsteroidMover>().Activate();
-
-                SpriteRenderer asteroidSpriteRenderer = asteroid.transform.GetChild(0).GetComponent<SpriteRenderer>();
-                asteroidSpriteRenderer.sortingOrder = 2;
-            }
-        }
-        
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (_asteroidLife < 1f || other.CompareTag("Enemy"))

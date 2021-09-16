@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ecd7d2bdda41d9b6ae9ba2ea8a603c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreValue: 50
+  scoreValue: 50
 --- !u!114 &3842819964136936984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,4 +246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c90c8f132a4ee18a8e0ae17cd90f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fxList: {fileID: 11400000, guid: 72fac281f1610f943a902acb3058c15e, type: 2}
+  fxList:
+  - {fileID: 11400000, guid: 72fac281f1610f943a902acb3058c15e, type: 2}
+  - {fileID: 11400000, guid: 48001413baedc964695e92abaec52959, type: 2}

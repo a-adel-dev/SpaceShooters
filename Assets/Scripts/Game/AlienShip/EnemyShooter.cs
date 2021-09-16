@@ -1,6 +1,4 @@
-﻿
-using System;
-using Core;
+﻿using Core;
 using UnityEngine;
 using Utils;
 
@@ -35,12 +33,19 @@ namespace Game.AlienShip
             { 
                 Instantiate(bulletPrefab, transform.position, transform.rotation);
                 _timeSinceLastShot = 0;
+                
+                PlayShootingSfx();
             }
         }
 
         private bool CanFire()
         {
             return _timeSinceLastShot >= firingCoolDown;
+        }
+        
+        private void PlayShootingSfx()
+        {
+            transform.parent.GetComponent<SfxAudioPlayer>().PlayAudio(SFXType.Bullet);
         }
         
     }

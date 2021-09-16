@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core
 {
     public class Enemy : MonoBehaviour
     {
-        [SerializeField] private int _scoreValue;
+        [FormerlySerializedAs("_scoreValue")] [SerializeField] private int scoreValue;
 
         public int ScoreValue
         {
-            get => _scoreValue;
-            set => _scoreValue = value;
+            get => scoreValue;
+            set => scoreValue = value;
         }
     }
 }

@@ -856,6 +856,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1917318766111100310, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
   m_PrefabInstance: {fileID: 1917318765620597283}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &891174748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891174747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c90c8f132a4ee18a8e0ae17cd90f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fxList:
+  - {fileID: 11400000, guid: db44241912fd17741b8e77229ab38692, type: 2}
+  - {fileID: 11400000, guid: 59164b4d5626c51449ecb0da0c21e6c9, type: 2}
 --- !u!114 &891174751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,14 +888,14 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2415825929160849206}
-          m_TargetAssemblyTypeName: Core.SFXUIplayer, Assembly-CSharp
-          m_MethodName: PlayHoverSound
-          m_Mode: 1
+        - m_Target: {fileID: 891174748}
+          m_TargetAssemblyTypeName: Core.SfxAudioPlayer, Assembly-CSharp
+          m_MethodName: PlayEffect
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 2
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -1019,6 +1034,7 @@ GameObject:
   - component: {fileID: 920407728}
   - component: {fileID: 920407727}
   - component: {fileID: 920407730}
+  - component: {fileID: 920407731}
   m_Layer: 5
   m_Name: QuitGame_Button
   m_TagString: Untagged
@@ -1102,14 +1118,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2415825929160849206}
-        m_TargetAssemblyTypeName: Core.SFXUIplayer, Assembly-CSharp
-        m_MethodName: PlayClickSound
-        m_Mode: 1
+      - m_Target: {fileID: 920407731}
+        m_TargetAssemblyTypeName: Core.SfxAudioPlayer, Assembly-CSharp
+        m_MethodName: PlayEffect
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1169,18 +1185,33 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2415825929160849206}
-          m_TargetAssemblyTypeName: Core.SFXUIplayer, Assembly-CSharp
-          m_MethodName: PlayHoverSound
-          m_Mode: 1
+        - m_Target: {fileID: 920407731}
+          m_TargetAssemblyTypeName: Core.SfxAudioPlayer, Assembly-CSharp
+          m_MethodName: PlayEffect
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 2
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &920407731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920407725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c90c8f132a4ee18a8e0ae17cd90f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fxList:
+  - {fileID: 11400000, guid: db44241912fd17741b8e77229ab38692, type: 2}
+  - {fileID: 11400000, guid: 59164b4d5626c51449ecb0da0c21e6c9, type: 2}
 --- !u!1 &1418600239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,6 +2125,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
@@ -2103,22 +2138,42 @@ PrefabInstance:
     - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2415825929160849206}
+      objectReference: {fileID: 891174748}
+    - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayClickSound
+      value: PlayEffect
       objectReference: {fileID: 0}
     - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Core.SfxAudioPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: Core.SFXUIplayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917318766111100308, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1917318766111100309, guid: e1a7ae8dbb2878748a81d941ed073712, type: 3}
       propertyPath: m_Pivot.x

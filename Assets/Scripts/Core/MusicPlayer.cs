@@ -16,18 +16,18 @@ namespace Core
 
         private void Start()
         {
-            PlayAudio();
+            PlayAudio(SFXType.GameMusic);
         }
 
         private void Update()
         {
             if (_audio.isPlaying is false)
             {
-                PlayAudio();
+                PlayAudio(SFXType.GameMusic);
             }
         }
 
-        public void PlayAudio()
+        public void PlayAudio(SFXType type)
         {
             _audio.PlayOneShot(fxList.clips[0], AudioSettings.MusicVolume);
         }

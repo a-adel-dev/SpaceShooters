@@ -7,22 +7,31 @@ namespace Core
     public class SfxAudioPlayer : MonoBehaviour, IAudioPlayer
     {
         private AudioSource _audio;
-        [SerializeField] AudioFXList fxList;
+        [SerializeField] private AudioFXList[] fxList;
 
         private void Awake()
         {
-            _audio = Camera.main.GetComponent<AudioSource>();
+            if (Camera.main is { }) _audio = Camera.main.GetComponent<AudioSource>();
+        }
+        
+        public void PlayAudio(SFXType type)
+        {
+            foreach (AudioFXList sfx in fxList)
+            {
+                if (sfx.sfxType != type) continue;
+                int randomIndex = Random.Range(0, sfx.clips.Length);
+                _audio.PlayOneShot(sfx.clips[randomIndex], AudioSettings.SfxVolume);
+            }
         }
 
-        public void PlayAudio()
+        public void PlayEffect(int fxTypeIndex)
         {
-            int randomIndex = Random.Range(0, fxList.clips.Length);
-            _audio.PlayOneShot(fxList.clips[randomIndex], AudioSettings.SfxVolume);
+            PlayAudio((SFXType)fxTypeIndex);
         }
     }
 
     public interface IAudioPlayer
     {
-        void PlayAudio();
+        void PlayAudio(SFXType type);
     }
 }

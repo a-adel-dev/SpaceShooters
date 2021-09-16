@@ -33,7 +33,7 @@ namespace Game.Player
             if (currentHealth <= 0)
             {
                 deathShaker.Invoke();
-                _sfxPlayer.PlayAudio();
+                _sfxPlayer.PlayAudio(SFXType.Explosion);
                 _fxVFXPlayer.PlayExplosionFX();
                 currentHealth = 0;
                 gameOver?.Invoke();
