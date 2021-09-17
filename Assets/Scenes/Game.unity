@@ -3440,10 +3440,10 @@ MonoBehaviour:
   pools:
   - poolType: 0
     prefab: {fileID: 7291482260122209051, guid: 75bfb99d6884eda418cb88a041a840e9, type: 3}
-    size: 400
+    size: 200
   - poolType: 1
     prefab: {fileID: 7623221122145135414, guid: 2664802d7a614c34daa30b77376af636, type: 3}
-    size: 1000
+    size: 600
 --- !u!4 &1954375827
 Transform:
   m_ObjectHideFlags: 0

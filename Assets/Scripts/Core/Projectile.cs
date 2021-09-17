@@ -1,5 +1,4 @@
-﻿using Game;
-using Game.Data;
+﻿using Game.Data;
 using UnityEngine;
 
 namespace Core
@@ -24,20 +23,18 @@ namespace Core
 
         private void MoveBullet()
         {
-            if (_activated) transform.position += 
-                transform.TransformDirection(Vector3.up) * (_bulletSpeed * Time.deltaTime);
+            if (_activated is false) return; 
+            transform.position += transform.TransformDirection(Vector3.up) * (_bulletSpeed * Time.deltaTime);
         }
 
         public void Activate()
         {
-            //Debug.Log($"{gameObject.name} is activated! ");
             _bulletSpeed = bulletData.bulletSpeed;
             _activated = true;
         }
 
         public void Deactivate()
         {
-            //Debug.Log($"{gameObject.name} is deactivated! ");
             gameObject.SetActive(false);
             _bulletLife = 0;
             _activated = false;
@@ -48,7 +45,7 @@ namespace Core
             if (other.CompareTag("Enemy"))
             {
                 other.GetComponent<IDamageable>().Damage();
-                gameObject.SetActive(false);
+                Deactivate();
                 GameEvents.EnemyDestroyed(other.GetComponent<Enemy>().ScoreValue);
             }
         }
