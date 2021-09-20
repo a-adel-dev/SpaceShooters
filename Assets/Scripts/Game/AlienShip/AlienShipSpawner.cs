@@ -1,7 +1,5 @@
 ﻿using Core;
-using Unity.Mathematics;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Game.AlienShip
 {
@@ -19,7 +17,7 @@ namespace Game.AlienShip
 
         private void SpawnShip()
         {
-            Instantiate(ShipPrefab, transform.position, quaternion.identity);
+            Instantiate(ShipPrefab, transform.position, Quaternion.identity);
         }
 
         private void Update()

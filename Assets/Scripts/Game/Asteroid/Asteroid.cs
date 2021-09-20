@@ -1,8 +1,5 @@
-﻿
-using Core;
-
+﻿using Core;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Game.Asteroid
 {

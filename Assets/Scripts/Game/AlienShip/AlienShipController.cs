@@ -1,8 +1,6 @@
-﻿using System;
-using Core;
+﻿using Core;
 using UnityEngine;
 using Utils;
-using Random = UnityEngine.Random;
 
 namespace Game.AlienShip
 {

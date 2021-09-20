@@ -1,5 +1,4 @@
-﻿using Core;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 namespace Game.UI

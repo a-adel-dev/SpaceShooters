@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Core
 {
-    public class SfxAudioPlayer : MonoBehaviour, IAudioPlayer
+    public class SfxAudioPlayer : MonoBehaviour
     {
         private AudioSource _audio;
         [SerializeField] private AudioFXList[] fxList;
@@ -29,9 +29,5 @@ namespace Core
             PlayAudio((SFXType)fxTypeIndex);
         }
     }
-
-    public interface IAudioPlayer
-    {
-        void PlayAudio(SFXType type);
-    }
+    
 }

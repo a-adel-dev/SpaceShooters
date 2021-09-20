@@ -2,7 +2,6 @@
 using UnityEngine;
 using Utils;
 
-
 namespace Game.AlienShip
 {
     public class EnemyShooter : MonoBehaviour

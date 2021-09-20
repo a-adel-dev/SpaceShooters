@@ -1,5 +1,4 @@
-﻿using Game.Player;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Core
 {
@@ -24,13 +23,13 @@ namespace Core
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.GetComponent<PlayerHealth>() == false || other.gameObject.CompareTag($"Enemy")) return;
+            if (other.gameObject.CompareTag("Player") == false) return;
             HitObject(other);
         }
 
         private void HitObject(Collider2D other)
         {
-            other.GetComponent<PlayerHealth>().Damage();
+            other.GetComponent<IDamageable>().Damage();
             Destroy(gameObject);
         }
         

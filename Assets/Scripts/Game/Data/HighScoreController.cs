@@ -56,7 +56,6 @@ namespace Game.Data
                 if (FileManager.LoadFromFile("scores.dat", out var json))
                 {
                     sd.LoadFromJson(json);
-                    //Debug.Log($"Load complete, list contains {sd.highScoresList.Count} entries");
                 }
             }
             else
@@ -76,14 +75,15 @@ namespace Game.Data
         void SaveJsonData()
         {   
             PopulateSaveData();
-            
-            if (FileManager.WriteToFile("scores.dat", sd.ToJson()))
+
+            if (!FileManager.WriteToFile("scores.dat", sd.ToJson()))
             {
-                Debug.Log("Save successful");
+                Debug.LogError("Save was not successful");
             }
+            
         }
 
-        public void PopulateSaveData()
+        private void PopulateSaveData()
         {
             if (_name == null)
             {

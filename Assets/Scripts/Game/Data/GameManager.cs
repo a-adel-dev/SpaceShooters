@@ -1,5 +1,4 @@
-﻿using Core;
-using Game.Player;
+﻿using Game.Player;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -18,17 +17,6 @@ namespace Game.Data
         private void Awake()
         {
             newGame?.Invoke();
-            // GameObject[] objs = GameObject.FindGameObjectsWithTag("GameManager");
-            //  if (objs.Length > 1)
-            //  {
-            //      Destroy(gameObject);
-            //  }
-            //  DontDestroyOnLoad(this);
-
-             //_configDataReader = new ConfigDataReader();
-            //_configDataReader.LoadJson();
-
-            
             SetCurrentPlayerShip(ships[0]);
         }
 

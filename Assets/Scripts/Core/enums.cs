@@ -35,4 +35,9 @@
         Hard = 3,
         GameOver = 4
     }
+    
+    public enum ShipType
+    {
+        Bee
+    }
 }

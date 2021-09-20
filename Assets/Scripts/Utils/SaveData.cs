@@ -38,7 +38,6 @@ namespace Utils
 
         public bool IsHighScore(int score)
         {
-            Debug.Log(score);
             return  highScoresList.Count < MaxHighScoreItems || score > highScoresList[MaxHighScoreItems-1].score;
         }
     }

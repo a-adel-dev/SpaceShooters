@@ -1,7 +1,5 @@
 ﻿using Core;
-using Unity.Mathematics;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Game.Asteroid
 {
@@ -41,7 +39,7 @@ namespace Game.Asteroid
         public void SpawnAsteroids(AsteroidSize size)
         {
             GameObject asteroid = ObjectPooler.Instance.SpawnFromPool(PoolTypes.Asteroids, transform.position,
-                    quaternion.identity);
+                    Quaternion.identity);
             asteroid.GetComponent<AsteroidMover>().Push(transform.up);
             
             float randomRotation = Random.Range(0, 359f);

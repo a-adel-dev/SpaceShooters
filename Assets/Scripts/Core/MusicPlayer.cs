@@ -1,10 +1,8 @@
-﻿using System;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 namespace Core
 {
-    public class MusicPlayer : MonoBehaviour, IAudioPlayer
+    public class MusicPlayer : MonoBehaviour
     {
         private AudioSource _audio;
         [SerializeField] AudioFXList fxList;

@@ -1,7 +1,7 @@
-﻿using Game.Data;
+﻿using Core;
 using UnityEngine;
 
-namespace Core
+namespace Game.Data
 {
     public class Projectile : MonoBehaviour
     {

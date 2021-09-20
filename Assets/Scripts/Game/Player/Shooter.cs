@@ -1,4 +1,5 @@
 ﻿using Core;
+using Game.Data;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
